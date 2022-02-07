@@ -1,0 +1,121 @@
+:root {
+  --mc-base-color: #2f2f2f;
+
+  --mc-bg-primary: rgb(246, 240, 250);
+  --mc-shadow: rgba(35, 35, 35, 0.5);
+
+  --mc-primary: rgb(175, 36, 255);
+  --mc-primary-dark: rgb(140, 29, 204);
+  --mc-primary-tr: rgba(232, 191, 255, 0.5);
+
+  --mc-active-primary: rgb(217, 30, 124);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 320px;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Verdana, sans-serif;
+  color: var(--mc-base-color);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+/* --- Button --- */
+.mc-button {
+  transition: color 400ms ease-out, background-color 400ms ease-out,
+    background-position 750ms ease-out;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  background: linear-gradient(
+    0deg,
+    rgba(152, 15, 215, 0.4) 0%,
+    rgba(203, 112, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  background-size: 200% 200%;
+  background-position-y: 25%;
+  color: var(--mc-primary);
+}
+.mc-button:hover {
+  background-position-y: 85%;
+  color: var(--mc-primary-dark);
+}
+.mc-button:focus {
+  box-shadow: 0 0 0 3px rgb(175 36 255 / 25%);
+}
+
+.mc-button-flow {
+  position: relative;
+  border: 1px solid currentColor;
+}
+.mc-button-flow::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  transition: opacity 500ms ease-in-out;
+  opacity: 0;
+  border: 2px solid currentColor;
+  border-radius: inherit;
+  color: inherit;
+}
+.mc-button-flow:hover::after {
+  opacity: 1;
+}
+
+.mc-button-solid {
+  background-color: var(--mc-primary);
+  border: 1px solid var(--mc-primary-dark);
+  color: #fff;
+}
+.mc-button-solid:hover {
+  background-color: var(--mc-primary-dark);
+  color: #fff;
+}
+
+/* --- Anchor --- */
+
+a.mc-anchor,
+a.mc-anchor:link,
+a.mc-anchor:visited {
+  color: var(--mc-primary);
+  text-decoration: none;
+}
+a.mc-anchor:hover,
+a.mc-anchor:focus {
+  outline: 0;
+  color: var(--mc-primary-dark);
+  text-decoration: underline;
+}
+a.mc-anchor:active {
+  color: var(--mc-active-primary);
+}
+
+/* --- Bootstrap override --- */
+.form-control:focus {
+  color: var(--mc-base-color);
+  border-color: var(--mc-primary);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgb(175 36 255 / 25%);
+}
