@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../bootstrap.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="main.css" />
+
+    <title>Main - Micro chat</title>
+  </head>
+
+  <body>
+    <div class="main-page">
+      <div class="container">
+        <nav class="navbar navbar-expand mc-navigator">
+          <a class="navbar-brand" href="javascript:void(0)"
+            ><b>Micro Chat</b></a
+          >
+
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="..">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../register.html">Register</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="javascript:void(0)"
+                >Chat</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../profile">Profile</a>
+            </li>
+          </ul>
+
+          <a
+            ><button type="button" class="btn mc-button mc-button-flow">
+              logout
+            </button></a
+          >
+        </nav>
+
+        <div class="row main-page__top">
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="common-card main-page__picker">
+              <h1 class="main-page__picker-title">List:</h1>
+
+              <div class="main-page__list">
+                <button class="mt-2 chat-pick">Friend 1</button>
+                <button class="mt-2 chat-pick active">Stranger 2</button>
+                <button class="mt-2 chat-pick">Stranger 4<div class="new"></div></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-8 col-lg-9 mt-5 mt-md-0">
+            <div class="chat-core">
+              <div class="chat-core__scroll">
+                chat here
+              </div>
+              
+            </div>
+            <div class="mt-3">
+              <form autocomplete="off">
+                <div class="mt-1">
+                  <label for="message-id" class="form-label">Message</label>
+                  <textarea id="message-id" rows="3" class="form-control"></textarea>
+                </div>
+
+                <div class="mt-1 d-flex align-items-center justify-content-end">
+                  <button type="submit" class="btn mc-button mc-button-solid">
+                    send
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
