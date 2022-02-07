@@ -43,6 +43,27 @@ h3 {
 }
 
 /* --------------------------------------------------------------------------------- */
+/* --- Scrollbars --- */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border: 2px solid #fff;
+  border-radius: 6px;
+  background-color: var(--mc-primary);
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mc-primary) #fff;
+}
+
+/* --------------------------------------------------------------------------------- */
 /* --- Button --- */
 .mc-button {
   transition: color 400ms ease-out, background-color 400ms ease-out,
@@ -152,9 +173,8 @@ a.mc-anchor:active {
   color: var(--mc-primary-dark);
 }
 .mc-navigator .nav-link.active {
-  color: var(--mc-active-primary)
+  color: var(--mc-active-primary);
 }
-
 
 .common-card {
   padding: 20px;
