@@ -11,8 +11,4 @@
   margin-left: 10px;
   width: 100%;
   max-width: 320px;
-  padding: 20px;
-  box-shadow: 1px 1px 4px var(--mc-shadow);
-  border-radius: 8px;
-  background-color: var(--mc-bg-primary);
 }

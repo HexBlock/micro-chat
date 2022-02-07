@@ -4,6 +4,8 @@
   --mc-bg-primary: rgb(246, 240, 250);
   --mc-shadow: rgba(35, 35, 35, 0.5);
 
+  --mc-fade-shadow: rgb(175 36 255 / 25%);
+
   --mc-primary: rgb(175, 36, 255);
   --mc-primary-dark: rgb(140, 29, 204);
   --mc-primary-tr: rgba(232, 191, 255, 0.5);
@@ -39,6 +41,7 @@ h3 {
   font-weight: 700;
 }
 
+/* --------------------------------------------------------------------------------- */
 /* --- Button --- */
 .mc-button {
   transition: color 400ms ease-out, background-color 400ms ease-out,
@@ -60,7 +63,7 @@ h3 {
   color: var(--mc-primary-dark);
 }
 .mc-button:focus {
-  box-shadow: 0 0 0 3px rgb(175 36 255 / 25%);
+  box-shadow: 0 0 0 3px var(--mc-fade-shadow);
 }
 
 .mc-button-flow {
@@ -94,8 +97,8 @@ h3 {
   color: #fff;
 }
 
+/* --------------------------------------------------------------------------------- */
 /* --- Anchor --- */
-
 a.mc-anchor,
 a.mc-anchor:link,
 a.mc-anchor:visited {
@@ -112,10 +115,19 @@ a.mc-anchor:active {
   color: var(--mc-active-primary);
 }
 
+/* --------------------------------------------------------------------------------- */
+.common-card {
+  padding: 20px;
+  box-shadow: 1px 1px 4px var(--mc-shadow);
+  border-radius: 8px;
+  background-color: var(--mc-bg-primary);
+}
+
+/* --------------------------------------------------------------------------------- */
 /* --- Bootstrap override --- */
 .form-control:focus {
   color: var(--mc-base-color);
   border-color: var(--mc-primary);
   outline: 0;
-  box-shadow: 0 0 0 3px rgb(175 36 255 / 25%);
+  box-shadow: 0 0 0 3px var(--mc-fade-shadow);
 }
