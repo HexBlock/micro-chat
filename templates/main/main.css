@@ -126,9 +126,10 @@
   border-top-right-radius: 12px;
   border-top-left-radius: 0;
   padding: 7px 17px;
+  background: var(--mc-primary-tr);
   word-wrap: break-word;
   word-break: break-word;
-  background: var(--mc-primary-tr);
+  text-align: left;
 }
 .chat-message.mine > .chat-message__msg {
   border-top-right-radius: 0;
