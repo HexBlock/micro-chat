@@ -9,7 +9,7 @@
 }
 
 .main-page__picker {
-  padding: 20px 6px;
+  padding: 20px 4px;
 }
 .main-page__picker-title {
   padding-right: 14px;
@@ -17,11 +17,14 @@
 }
 
 .main-page__list {
-  max-height: 250px;
   overflow: auto;
+  min-height: 50px;
+  max-height: 250px;
+  padding: 2px;
 }
 @media (min-width: 768px) {
   .main-page__list {
+    min-height: 50px;
     max-height: calc(100vh - 292px);
   }
 }
@@ -53,9 +56,8 @@
   position: relative;
   color: var(--mc-active-primary);
 }
-.chat-pick > .new, 
+.chat-pick > .new,
 .chat-pick.active::after {
-
   position: absolute;
   top: 50%;
   display: inline-block;
@@ -69,7 +71,7 @@
   background-color: rgb(30 83 217);
 }
 .chat-pick.active::after {
-  content: '';
+  content: "";
   left: 2px;
   background-color: var(--mc-active-primary);
 }
@@ -77,19 +79,59 @@
 /* --------------------------------------------------------------------------------- */
 
 .chat-core {
-  padding: 14px 10px 14px 12px;
+  padding: 14px 6px 14px 12px;
   box-shadow: 1px 1px 4px var(--mc-shadow);
   border-radius: 12px;
 }
 
 .chat-core__scroll {
+  overflow: auto;
+  min-height: 300px;
   height: 450px;
   max-height: 450px;
-  overflow: auto;
+  padding-right: 6px;
 }
 @media (min-width: 768px) {
   .chat-core__scroll {
     height: calc(100vh - 420px);
     max-height: calc(100vh - 420px);
   }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+.chat-message {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+  font-size: 14px;
+}
+.chat-message.mine {
+  margin-left: 8.33333333%;
+  text-align: right;
+}
+.chat-message:not(:first-of-type) {
+  margin-top: 12px;
+}
+
+.chat-message__who {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+.chat-message__msg {
+  display: inline-block;
+  border-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 0;
+  padding: 7px 17px;
+  word-wrap: break-word;
+  word-break: break-word;
+  background: var(--mc-primary-tr);
+}
+.chat-message.mine > .chat-message__msg {
+  border-top-right-radius: 0;
+  border-top-left-radius: 12px;
+  background: rgba(45 45 45 / 10%);
 }
