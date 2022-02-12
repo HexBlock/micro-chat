@@ -1,0 +1,139 @@
+.main-page {
+  min-height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__top {
+    margin-top: 44px;
+  }
+
+  &__picker {
+    padding: 20px 4px;
+  }
+
+  &__picker-title {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  &__list {
+    overflow: auto;
+    min-height: 50px;
+    max-height: 250px;
+    padding: 2px;
+
+    @media (min-width: 768px) {
+      min-height: 50px;
+      max-height: calc(100vh - 292px);
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+.chat-pick {
+  position: relative;
+  display: block;
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 36px;
+  padding: 2px 15px 2px 15px;
+  background: transparent;
+
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: left;
+  cursor: pointer;
+
+  &:not(.active):hover {
+    background-color: rgb(30 83 217 / 25%);
+  }
+
+  &.active {
+    position: relative;
+    color: var(--mc-active-primary);
+  }
+
+  > .new,
+  &.active::after {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  > .new {
+    right: 4px;
+    background-color: rgb(30 83 217);
+  }
+  &.active::after {
+    content: '';
+    left: 2px;
+    background-color: var(--mc-active-primary);
+  }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+.chat-core {
+  padding: 14px 6px 14px 12px;
+  box-shadow: 1px 1px 4px var(--mc-shadow);
+  border-radius: 12px;
+
+  &__scroll {
+    overflow: auto;
+    min-height: 300px;
+    height: 450px;
+    max-height: 450px;
+    padding-right: 6px;
+
+    @media (min-width: 768px) {
+      height: calc(100vh - 420px);
+      max-height: calc(100vh - 420px);
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+.chat-message {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+  font-size: 14px;
+
+  &:not(:first-of-type) {
+    margin-top: 12px;
+  }
+
+  &__who {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 10px;
+  }
+
+  &.mine {
+    margin-left: 8.33333333%;
+    text-align: right;
+  }
+  &__msg {
+    display: inline-block;
+    border-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 0;
+    padding: 7px 17px;
+    background: var(--mc-primary-tr);
+    word-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+  }
+  &.mine > &__msg {
+    border-top-right-radius: 0;
+    border-top-left-radius: 12px;
+    background: rgba(45 45 45 / 10%);
+  }
+}

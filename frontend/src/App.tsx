@@ -2,6 +2,7 @@ import { Route, Link, Routes } from 'react-router-dom';
 import { Login } from './app/sites/login/Login';
 import { Register } from './app/sites/register/Register';
 import { Profile } from './app/sites/profile/Profile';
+import { MainPage } from './app/sites/main/Main';
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="main" element={<MainPage />} />
       </Routes>
     </>
   );
