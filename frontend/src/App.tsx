@@ -4,18 +4,15 @@ import { Register } from './app/sites/register/Register';
 
 export const App = () => {
   return (
-    <div className="App">
+    <>
       <nav>
         <Link to="/">Login</Link> | <Link to="register">Register</Link>
       </nav>
 
-      <div>
-        <Routes>
-          <Route path="/" element={<Login />}>
-            <Route path="register" element={<Register />} />
-          </Route>
-        </Routes>
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Routes>
+    </>
   );
 };
