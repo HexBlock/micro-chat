@@ -1,3 +1,4 @@
+import { Routing } from 'app/utils/routing/routing';
 import { Link } from 'react-router-dom';
 import styles from './register.module.scss';
 
@@ -36,7 +37,7 @@ export const Register = () => {
               submit
             </button>
 
-            <Link to="/" className="mc-anchor">
+            <Link to={Routing.ROOT} className="mc-anchor">
               (return to login)
             </Link>
           </div>

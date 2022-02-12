@@ -1,4 +1,5 @@
 import { navMap } from 'app/utils/routing/nav-map';
+import { Routing } from 'app/utils/routing/routing';
 import { Link, useLocation } from 'react-router-dom';
 
 export const Navigation = () => {
@@ -21,7 +22,7 @@ export const Navigation = () => {
 
   return (
     <nav className="navbar navbar-expand mc-navigator">
-      <Link to="/" className="navbar-brand">
+      <Link to={Routing.ROOT} className="navbar-brand">
         <b>Micro Chat</b>
       </Link>
 
