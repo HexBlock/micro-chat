@@ -1,9 +1,12 @@
+import { Navigation } from '../../core/navigation/Navigation';
 import styles from './profile.module.scss';
 
 export const Profile = () => {
   return (
     <div className={styles['profile-page']}>
       <div className="container">
+        <Navigation />
+
         <h1 className={styles['profile-page__top']}>Welcome, yourlogin here</h1>
 
         <div className={`row ${styles['profile-page__top']}`}>

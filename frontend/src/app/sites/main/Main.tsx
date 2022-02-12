@@ -1,9 +1,12 @@
+import { Navigation } from '../../core/navigation/Navigation';
 import styles from './main.module.scss';
 
 export const MainPage = () => {
   return (
     <div className={styles['main-page']}>
       <div className="container">
+        <Navigation />
+
         <div className={`row ${styles['main-page__top']}`}>
           <div className="col-12 col-md-4 col-lg-3">
             <div className={`common-card ${styles['main-page__picker']}`}>
