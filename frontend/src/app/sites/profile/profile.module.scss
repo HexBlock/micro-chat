@@ -1,0 +1,30 @@
+.profile-page {
+  min-height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__top {
+    margin-top: 44px;
+  }
+
+  &__edit {
+    padding: 26px;
+    box-shadow: 1px 1px 4px var(--mc-shadow);
+    border-radius: 12px;
+  }
+
+  &__form {
+    padding-bottom: 12px;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid var(--mc-primary-darkest);
+    }
+  }
+
+  &__form-title {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--mc-primary-darkest);
+  }
+}
