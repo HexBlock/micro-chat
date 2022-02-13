@@ -1,6 +1,7 @@
 import { Navigation } from '../../core/navigation/Navigation';
 import { ChatCore } from './components/chat-core/ChatCore';
 import { ChatPicker } from './components/chat-picker/ChatPicker';
+import { MessageSubmitForm } from './components/message-submit-form/MessageSubmitForm';
 import styles from './main.module.scss';
 
 export const MainPage = () => {
@@ -18,27 +19,7 @@ export const MainPage = () => {
             <ChatCore />
 
             <div className="mt-3">
-              <form autoComplete="off">
-                <div className="mt-1">
-                  <label htmlFor="message-id" className="form-label">
-                    Message
-                  </label>
-                  <textarea
-                    id="message-id"
-                    rows={2}
-                    className="form-control"
-                  ></textarea>
-                </div>
-
-                <div className="mt-1 d-flex align-items-center justify-content-end">
-                  <button
-                    type="submit"
-                    className="btn mc-button mc-button-solid"
-                  >
-                    send
-                  </button>
-                </div>
-              </form>
+              <MessageSubmitForm />
             </div>
           </div>
         </div>
