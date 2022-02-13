@@ -1,4 +1,5 @@
 import styles from './cm.module.scss';
+import { format } from 'date-fns';
 
 type Props = {
   name: string;
@@ -8,7 +9,7 @@ type Props = {
 };
 
 export const ChatMessage = ({ name, message, date, currentUser }: Props) => {
-  const dateString = date.toISOString(); // TODO: introduce date-fns
+  const dateString = format(date, 'yyyy-MM-dd HH:mm:ss');
   const who = currentUser ? 'me' : name;
   const cssMessage = currentUser
     ? `${styles['chat-message']} ${styles['mine']}`
