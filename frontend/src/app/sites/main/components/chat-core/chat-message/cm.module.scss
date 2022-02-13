@@ -1,0 +1,37 @@
+.chat-message {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+  font-size: 14px;
+
+  &:not(:first-of-type) {
+    margin-top: 12px;
+  }
+
+  &__who {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 10px;
+  }
+
+  &.mine {
+    margin-left: 8.33333333%;
+    text-align: right;
+  }
+  &__msg {
+    display: inline-block;
+    border-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 0;
+    padding: 7px 17px;
+    background: var(--mc-primary-tr);
+    word-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+  }
+  &.mine > &__msg {
+    border-top-right-radius: 0;
+    border-top-left-radius: 12px;
+    background: rgba(45 45 45 / 10%);
+  }
+}

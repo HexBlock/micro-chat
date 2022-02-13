@@ -1,0 +1,18 @@
+.chat-core {
+  padding: 14px 6px 14px 12px;
+  box-shadow: 1px 1px 4px var(--mc-shadow);
+  border-radius: 12px;
+
+  &__scroll {
+    overflow: auto;
+    min-height: 300px;
+    height: 450px;
+    max-height: 450px;
+    padding-right: 6px;
+
+    @media (min-width: 768px) {
+      height: calc(100vh - 420px);
+      max-height: calc(100vh - 420px);
+    }
+  }
+}
