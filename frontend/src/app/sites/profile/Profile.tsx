@@ -1,9 +1,10 @@
+import { withAuthGuard } from 'app/utils/routing/with-auth.guard';
 import { Navigation } from '../../core/navigation/Navigation';
 import { ChangePasswordForm } from './components/ChangePasswordForm';
 import { DisplayNameForm } from './components/DisplayNameForm';
 import styles from './profile.module.scss';
 
-export const Profile = () => {
+const ProfileInit = () => {
   return (
     <div className={styles['profile-page']}>
       <div className="container">
@@ -43,3 +44,5 @@ export const Profile = () => {
     </div>
   );
 };
+
+export const Profile = withAuthGuard(ProfileInit);

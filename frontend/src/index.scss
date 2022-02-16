@@ -196,6 +196,15 @@ a.mc-anchor {
       color: var(--mc-active-primary);
     }
   }
+
+  &__display {
+    margin-right: 15px;
+    color: #252525;
+
+    > .active {
+      color: var(--mc-active-primary);
+    }
+  }
 }
 
 /* --------------------------------------------------------------------------------- */

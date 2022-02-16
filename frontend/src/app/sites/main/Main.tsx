@@ -1,10 +1,11 @@
+import { withAuthGuard } from 'app/utils/routing/with-auth.guard';
 import { Navigation } from '../../core/navigation/Navigation';
 import { ChatCore } from './components/chat-core/ChatCore';
 import { ChatPicker } from './components/chat-picker/ChatPicker';
 import { MessageSubmitForm } from './components/message-submit-form/MessageSubmitForm';
 import styles from './main.module.scss';
 
-export const MainPage = () => {
+const MainPageInit = () => {
   return (
     <div className={styles['main-page']}>
       <div className="container">
@@ -27,3 +28,5 @@ export const MainPage = () => {
     </div>
   );
 };
+
+export const MainPage = withAuthGuard(MainPageInit);
