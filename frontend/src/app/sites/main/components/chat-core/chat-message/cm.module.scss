@@ -12,6 +12,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 10px;
+
+    > span.mine {
+      color: var(--mc-active-primary);
+    }
   }
 
   &.mine {

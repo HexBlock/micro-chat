@@ -12,7 +12,7 @@ export const ChatMessage = ({ name, message, date, currentUser }: Props) => {
   const ddd = typeof date === 'string' ? new Date(date) : date;
   const dateString = format(ddd, 'yyyy-MM-dd HH:mm:ss');
 
-  const who = currentUser ? 'me' : name;
+  const who = currentUser ? '[me]' : name;
   const cssMessage = currentUser
     ? `${styles['chat-message']} ${styles['mine']}`
     : styles['chat-message'];
@@ -21,7 +21,8 @@ export const ChatMessage = ({ name, message, date, currentUser }: Props) => {
   return (
     <div className={cssMessage}>
       <div className={styles['chat-message__who']}>
-        {who}, {dateString}
+        <span className={currentUser ? styles['mine'] : undefined}>{who}</span>,{' '}
+        {dateString}
       </div>
       <div className={styles['chat-message__msg']}>{message}</div>
     </div>

@@ -13,7 +13,7 @@ export const ChatCore = () => {
   const messages = storedMessages.map((msg) => (
     <ChatMessage
       key={msg.id}
-      name={msg.currentUser ? undefined : 'mockname'} // TODO: current chat username!
+      name={msg.currentUser ? undefined : currentChat?.name}
       message={msg.message}
       date={msg.date}
       currentUser={msg.currentUser}
