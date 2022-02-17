@@ -1,3 +1,4 @@
+// TODO: remove!
 export const mockChat: {
   id: string;
   name: string;
