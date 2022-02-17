@@ -28,6 +28,26 @@ const initialState: ChatState = {
       currentUser: true,
     },
   ],
+  ['223']: [
+    {
+      id: '2223',
+      message: 'Test message',
+      date: '2021-01-01T11:11:11.000Z',
+      currentUser: true,
+    },
+    {
+      id: '2224',
+      message: 'Test message 2',
+      date: '2021-01-01T11:11:11.000Z',
+      currentUser: true,
+    },
+    {
+      id: '2225',
+      message: 'Test message 3',
+      date: '2021-01-01T11:11:11.000Z',
+      currentUser: true,
+    },
+  ],
 };
 
 export const chatSlice = createSlice({
