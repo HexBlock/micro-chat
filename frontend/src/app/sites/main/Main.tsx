@@ -1,4 +1,6 @@
 import { withAuthGuard } from 'app/utils/routing/with-auth.guard';
+import { selectCurrentChat } from 'redux/features/friendSlice';
+import { useAppSelector } from 'redux/hooks';
 import { Navigation } from '../../core/navigation/Navigation';
 import { ChatCore } from './components/chat-core/ChatCore';
 import { ChatPicker } from './components/chat-picker/ChatPicker';
@@ -6,6 +8,8 @@ import { MessageSubmitForm } from './components/message-submit-form/MessageSubmi
 import styles from './main.module.scss';
 
 const MainPageInit = () => {
+  const currentChat = useAppSelector(selectCurrentChat);
+
   return (
     <div className={styles['main-page']}>
       <div className="container">
@@ -16,13 +20,15 @@ const MainPageInit = () => {
             <ChatPicker />
           </div>
 
-          <div className="col-12 col-md-8 col-lg-9 mt-5 mt-md-0">
-            <ChatCore />
+          {currentChat && (
+            <div className="col-12 col-md-8 col-lg-9 mt-5 mt-md-0">
+              <ChatCore />
 
-            <div className="mt-3">
-              <MessageSubmitForm />
+              <div className="mt-3">
+                <MessageSubmitForm />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

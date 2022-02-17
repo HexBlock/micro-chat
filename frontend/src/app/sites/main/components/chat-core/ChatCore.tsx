@@ -1,10 +1,14 @@
-import { MOCK_USER_ID, selectChatWithUser } from 'redux/features/chatSlice';
+import { selectChatWithUser } from 'redux/features/chatSlice';
 import { useAppSelector } from 'redux/hooks';
 import { ChatMessage } from './chat-message/ChatMessage';
 import styles from './cc.module.scss';
+import { selectCurrentChat } from 'redux/features/friendSlice';
 
 export const ChatCore = () => {
-  const storedMessages = useAppSelector(selectChatWithUser(MOCK_USER_ID));
+  const currentChat = useAppSelector(selectCurrentChat);
+  const storedMessages = !currentChat
+    ? []
+    : useAppSelector(selectChatWithUser(currentChat.id));
 
   const messages = storedMessages.map((msg) => (
     <ChatMessage

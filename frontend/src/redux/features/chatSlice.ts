@@ -19,12 +19,12 @@ const initialState: ChatState = {
     {
       id: '1',
       message: 'Hello!',
-      date: new Date('2022-02-07 20:21:34'),
+      date: '2022-02-07T19:21:34.000Z',
     },
     {
       id: '2',
       message: 'Hi!',
-      date: new Date('2022-02-07 20:21:35'),
+      date: '2022-02-07T19:21:35.000Z',
       currentUser: true,
     },
   ],
