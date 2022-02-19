@@ -62,8 +62,11 @@ export const chatSlice = createSlice({
         }
       >
     ) => {
-      const { userId, ...message } = action.payload;
-      const newMessage: ChatLogMessage = { ...message };
+      const { userId, ...msg } = action.payload;
+      if (!userId || !msg.message) return;
+      if (!msg.message.trim()) return;
+
+      const newMessage: ChatLogMessage = { ...msg };
 
       if (!Array.isArray(state[userId])) {
         state[userId] = [newMessage];

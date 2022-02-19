@@ -1,6 +1,11 @@
 import React, { useRef, useState } from 'react';
+import { addMessage } from 'redux/features/chatSlice';
+import { selectCurrentChat } from 'redux/features/friendSlice';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
 
 export const MessageSubmitForm = () => {
+  const dispatch = useAppDispatch();
+  const currentChat = useAppSelector(selectCurrentChat);
   const [message, setMessage] = useState('');
   const formElement = useRef<HTMLFormElement>(null);
 
@@ -15,9 +20,18 @@ export const MessageSubmitForm = () => {
   const handleSubmitNewMessage = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log('new message is:', {
-      message
-    });
+    if (!currentChat?.id || !message) return;
+
+    dispatch(
+      addMessage({
+        userId: currentChat.id,
+        id: `${Math.random()}`,
+        message: message,
+        date: new Date().toISOString(),
+        currentUser: true,
+      })
+    );
+    setMessage('');
   };
 
   return (
@@ -37,7 +51,9 @@ export const MessageSubmitForm = () => {
           className="form-control"
           value={message}
           onKeyDown={handleMessageEnter}
-          onInput={event => setMessage((event.target as HTMLTextAreaElement).value)}
+          onInput={(event) =>
+            setMessage((event.target as HTMLTextAreaElement).value)
+          }
         ></textarea>
       </div>
 
