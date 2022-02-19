@@ -198,7 +198,9 @@ a.mc-anchor {
   }
 
   &__display {
+    display: inline-flex;
     margin-right: 15px;
+    max-width: 30%;
     color: #252525;
 
     > .active {

@@ -6,7 +6,7 @@ import { logout, selectAccessToken } from 'redux/features/authSlice';
 export const Navigation = () => {
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
-  const login = useAppSelector(selectAccessToken);
+  const login = useAppSelector(selectAccessToken); // TODO: Fix and change to user data and login
 
   const links = navMap.map((el, idx) => {
     const currentPage = pathname === el.path;
@@ -32,7 +32,7 @@ export const Navigation = () => {
       <ul className="navbar-nav me-auto">{links}</ul>
 
       {login ? (
-        <span className="mc-navigator__display">(<span className='active'>{login}</span>)</span>
+        <span className="mc-navigator__display">(<span className='active text-truncate'>{login}</span>)</span>
       ) : null}
 
       <button
