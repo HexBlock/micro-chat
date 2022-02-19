@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { addMessage } from 'redux/features/chatSlice';
 import { selectCurrentChat } from 'redux/features/friendSlice';
 import { useAppDispatch, useAppSelector } from 'redux/hooks';
@@ -8,6 +8,12 @@ export const MessageSubmitForm = () => {
   const currentChat = useAppSelector(selectCurrentChat);
   const [message, setMessage] = useState('');
   const formElement = useRef<HTMLFormElement>(null);
+  const txtAreaElement = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    setMessage('');
+    txtAreaElement.current?.focus();
+  }, [currentChat]);
 
   const handleMessageEnter = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' && !event.shiftKey) {
@@ -45,6 +51,7 @@ export const MessageSubmitForm = () => {
           Message
         </label>
         <textarea
+          ref={txtAreaElement}
           id="new-message"
           name="new-message"
           rows={2}
