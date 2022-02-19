@@ -1,12 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
 import authReducer from './features/authSlice';
 import chatReducer from './features/chatSlice';
 import friendReducer from './features/friendSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
     auth: authReducer,
     chat: chatReducer,
     friend: friendReducer
