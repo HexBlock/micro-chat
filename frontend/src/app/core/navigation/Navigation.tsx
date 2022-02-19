@@ -8,7 +8,7 @@ export const Navigation = () => {
   const dispatch = useAppDispatch();
   const login = useAppSelector(selectAccessToken); // TODO: Fix and change to user data and login
 
-  const links = navMap.map((el, idx) => {
+  const links = navMap.filter(el => !el.unauthorized).map((el, idx) => {
     const currentPage = pathname === el.path;
     return (
       <li key={idx} className="nav-item">
@@ -25,7 +25,7 @@ export const Navigation = () => {
 
   return (
     <nav className="navbar navbar-expand mc-navigator">
-      <Link to={Routing.ROOT} className="navbar-brand">
+      <Link to={Routing.MAIN} className="navbar-brand">
         <b>Micro Chat</b>
       </Link>
 
