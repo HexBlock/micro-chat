@@ -1,18 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ChatLogMessage, ChatState, MOCK_USER_ID } from 'redux/state/chat.type';
 import { RootState } from 'redux/store';
-
-export const MOCK_USER_ID = 'uID1' as const;
-
-export interface ChatLogMessage {
-  id: string;
-  message: string;
-  date: Date | string;
-  currentUser?: boolean;
-}
-
-export interface ChatState {
-  [key: string]: ChatLogMessage[];
-}
 
 const initialState: ChatState = {
   [MOCK_USER_ID]: [

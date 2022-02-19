@@ -1,12 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CommonId } from 'app/utils/types/common-id';
+import { MOCK_USER_ID } from 'redux/state/chat.type';
+import { FriendState } from 'redux/state/friend.type';
 import { RootState } from 'redux/store';
-import { MOCK_USER_ID } from './chatSlice';
-
-export interface FriendState {
-  currentChat: CommonId | null;
-  friends: CommonId[];
-}
 
 const initialState: FriendState = {
   currentChat: null,
